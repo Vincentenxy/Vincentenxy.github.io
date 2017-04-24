@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Integer Divesion | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="今天来说一下整数划分的递归算法整数划分描述将正整数n表示为一系列正整数之和n = n1 + n2 + n3 + … + nk (n1 &amp;gt;= n2 &amp;gt;= n3 &amp;gt;= … &amp;gt;= nk  &amp;gt; = 1,  k &amp;gt;=1 )正整数n的这种表示称为正整数n的划分，n的不同划分个数称为正整数的划分数，记作p(n)正整数n的不同划分中，将最大加数n1不大于m的划分记作q(n,m)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Integer Divesion">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/Integer-Divesion/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今天来说一下整数划分的递归算法整数划分描述将正整数n表示为一系列正整数之和n = n1 + n2 + n3 + … + nk (n1 &amp;gt;= n2 &amp;gt;= n3 &amp;gt;= … &amp;gt;= nk  &amp;gt; = 1,  k &amp;gt;=1 )正整数n的这种表示称为正整数n的划分，n的不同划分个数称为正整数的划分数，记作p(n)正整数n的不同划分中，将最大加数n1不大于m的划分记作q(n,m)">
+<meta property="og:updated_time" content="2017-04-24T16:37:01.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Integer Divesion">
+<meta name="twitter:description" content="今天来说一下整数划分的递归算法整数划分描述将正整数n表示为一系列正整数之和n = n1 + n2 + n3 + … + nk (n1 &amp;gt;= n2 &amp;gt;= n3 &amp;gt;= … &amp;gt;= nk  &amp;gt; = 1,  k &amp;gt;=1 )正整数n的这种表示称为正整数n的划分，n的不同划分个数称为正整数的划分数，记作p(n)正整数n的不同划分中，将最大加数n1不大于m的划分记作q(n,m)">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Integer-Divesion" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Integer-Divesion" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/25/Integer-Divesion/" class="article-date">
   <time datetime="2017-04-24T16:19:46.000Z" itemprop="datePublished">2017-04-25</time>
@@ -74,8 +76,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/25/Integer-Divesion/">Integer Divesion</a>
+    <h1 class="article-title" itemprop="name">
+      Integer Divesion
     </h1>
   
 
@@ -134,109 +136,19 @@ cout&lt;&lt; endl;
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Full-Permutation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/24/Full-Permutation/" class="article-date">
-  <time datetime="2017-04-23T16:39:45.000Z" itemprop="datePublished">2017-04-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/24/Full-Permutation/">Full Permutation</a>
-    </h1>
+    <a href="/2017/04/24/Full-Permutation/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Full Permutation</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="首先说一下递归，递归是很重要的一个算法，利用递归算法可以很轻易的解决好多难题，相比较而言，递归算法的优势就在于利用较少的代码解决了很难的问题。"><a href="#首先说一下递归，递归是很重要的一个算法，利用递归算法可以很轻易的解决好多难题，相比较而言，递归算法的优势就在于利用较少的代码解决了很难的问题。" class="headerlink" title="首先说一下递归，递归是很重要的一个算法，利用递归算法可以很轻易的解决好多难题，相比较而言，递归算法的优势就在于利用较少的代码解决了很难的问题。"></a>首先说一下递归，递归是很重要的一个算法，利用递归算法可以很轻易的解决好多难题，相比较而言，递归算法的优势就在于利用较少的代码解决了很难的问题。</h2><h2 id="但是同时，递归一个很大的运算的话很消耗电脑的性能，有可能导致死机"><a href="#但是同时，递归一个很大的运算的话很消耗电脑的性能，有可能导致死机" class="headerlink" title="但是同时，递归一个很大的运算的话很消耗电脑的性能，有可能导致死机"></a>但是同时，递归一个很大的运算的话很消耗电脑的性能，有可能导致死机</h2><h2 id="递归算法思路"><a href="#递归算法思路" class="headerlink" title="递归算法思路"></a>递归算法思路</h2><h3 id="你只需要掌握亮点"><a href="#你只需要掌握亮点" class="headerlink" title="你只需要掌握亮点"></a>你只需要掌握亮点</h3><h3 id="1-递归的出口是什么，一般情况就是最后循环为1的时候退出递归，但是也有别的情况，基本上情况类似，没有太大的出入"><a href="#1-递归的出口是什么，一般情况就是最后循环为1的时候退出递归，但是也有别的情况，基本上情况类似，没有太大的出入" class="headerlink" title="1.递归的出口是什么，一般情况就是最后循环为1的时候退出递归，但是也有别的情况，基本上情况类似，没有太大的出入"></a>1.递归的出口是什么，一般情况就是最后循环为1的时候退出递归，但是也有别的情况，基本上情况类似，没有太大的出入</h3><h3 id="2-其次就是掌握宏观上递归的过程，推理出本阶段的上一阶段的递归过程，一般两到三个即可，最后不用考虑程序的运行方式，只要明白宏观上是不断向前一级进行计算的即可。"><a href="#2-其次就是掌握宏观上递归的过程，推理出本阶段的上一阶段的递归过程，一般两到三个即可，最后不用考虑程序的运行方式，只要明白宏观上是不断向前一级进行计算的即可。" class="headerlink" title="2.其次就是掌握宏观上递归的过程，推理出本阶段的上一阶段的递归过程，一般两到三个即可，最后不用考虑程序的运行方式，只要明白宏观上是不断向前一级进行计算的即可。"></a>2.其次就是掌握宏观上递归的过程，推理出本阶段的上一阶段的递归过程，一般两到三个即可，最后不用考虑程序的运行方式，只要明白宏观上是不断向前一级进行计算的即可。</h3><h2 id="下面代码是利用递归实现全排列"><a href="#下面代码是利用递归实现全排列" class="headerlink" title="下面代码是利用递归实现全排列"></a>下面代码是利用递归实现全排列</h2><h3 id="include"><a href="#include" class="headerlink" title="#include"></a>#include<iostream></iostream></h3><p>using namespace std;</p>
-<p>void swap( char <em>a , char </em>b)</p>
-<p>{</p>
-<pre><code>char temp = *a;
-
-*a = *b;
-
-*b = temp;
-</code></pre><p>}</p>
-<p>void fullPermutation(char list[], int begin, int end)</p>
-<p>{</p>
-<pre><code>if ( begin &gt; end)
-
-{
-
-     for (int i = 0; i &lt;= end; i++)
-
-     {
-
-         cout&lt;&lt; list[i];
-
-     }
-
-     cout&lt;&lt; endl;
-
-     return;
-
-}
-
-else
-
-{
-
-     for (int i = begin; i &lt;= end; i++)
-
-     {
-
-         swap(list[begin],list[i]);
-
-         fullPermutation(list, begin + 1, end);
-
-         swap(list[i], list[begin]);
-
-     }
-
-}
-</code></pre><p>}</p>
-<p>void main()</p>
-<p>{</p>
-<pre><code>int n;
-
-char array[5] = &quot;1234&quot;;
-
-
-
-fullPermutation(array,0, 3);
-
-
-
-cout&lt;&lt; endl;
-</code></pre><p>}</p>
-<h3 id="基本上就是这么简单，后面我还会分享上更多的递归算法，以及其他算法。更多尽请关注！"><a href="#基本上就是这么简单，后面我还会分享上更多的递归算法，以及其他算法。更多尽请关注！" class="headerlink" title="基本上就是这么简单，后面我还会分享上更多的递归算法，以及其他算法。更多尽请关注！"></a>基本上就是这么简单，后面我还会分享上更多的递归算法，以及其他算法。更多尽请关注！</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/24/Full-Permutation/" data-id="cj1wck5vi0000zoupjymsfhi3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursive-c/">recursive,c++</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
