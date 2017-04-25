@@ -3,14 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2017/4 | Hexo</title>
+  <title>Two Minute Search | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2017/04/index.html">
+  <meta name="description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
+#include
+using namespace std;
+int twoMinuteSearch(int *list, int theSearch, int left, int right)
+{
+int middle =(left + right +1 ) / 2;   //there must be add 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Two Minute Search">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/Two-Minute-Search/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
+#include
+using namespace std;
+int twoMinuteSearch(int *list, int theSearch, int left, int right)
+{
+int middle =(left + right +1 ) / 2;   //there must be add 1">
+<meta property="og:updated_time" content="2017-04-25T15:21:56.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Two Minute Search">
+<meta name="twitter:description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
+#include
+using namespace std;
+int twoMinuteSearch(int *list, int theSearch, int left, int right)
+{
+int middle =(left + right +1 ) / 2;   //there must be add 1">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,77 +78,110 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/25/Two-Minute-Search/" class="archive-article-date">
-  <time datetime="2017-04-25T15:17:09.000Z" itemprop="datePublished">4月 25</time>
+        <section id="main"><article id="post-Two-Minute-Search" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/25/Two-Minute-Search/" class="article-date">
+  <time datetime="2017-04-25T15:17:09.000Z" itemprop="datePublished">2017-04-25</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/25/Two-Minute-Search/">Two Minute Search</a>
+    <h1 class="article-title" itemprop="name">
+      Two Minute Search
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/25/Integer-Divesion/" class="archive-article-date">
-  <time datetime="2017-04-24T16:19:46.000Z" itemprop="datePublished">4月 25</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/25/Integer-Divesion/">Integer Divesion</a>
-    </h1>
-  
+        <h1 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h1><p>今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！</p>
+<p>#include<iostream></iostream></p>
+<p>using namespace std;</p>
+<p>int twoMinuteSearch(int *list, int theSearch, int left, int right)</p>
+<p>{</p>
+<pre><code>int middle =(left + right +1 ) / 2;   //there must be add 1, it&apos;s important,while 9 will not be found
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/24/Full-Permutation/" class="archive-article-date">
-  <time datetime="2017-04-23T16:39:45.000Z" itemprop="datePublished">4月 24</time>
-</a>
+
+
+if (theSearch &gt; list[right] || theSearch &lt; list[left])
+
+     return -1;
+
+
+
+if (theSearch == list[middle])
+
+     return middle - 1;
+
+if (theSearch &gt; list[middle])
+
+     return twoMinuteSearch(list, theSearch, middle, right);
+
+else
+
+     return twoMinuteSearch(list, theSearch, left, middle);
+</code></pre><p>}</p>
+<p>void main()</p>
+<p>{</p>
+<pre><code>int theSearchNumber;
+
+int theList[10] = { NULL,0,1,2,3,4,5,6,7,8};  //The first must be NULL, because therewill be a problem that the first or the last can&apos;t be found!
+
+
+
+int theResult;
+
+
+
+cout&lt;&lt; &quot;Please inputthe number which you want to search:&quot;;
+
+cin &gt;&gt; theSearchNumber;
+
+
+
+theResult=  twoMinuteSearch( theList,theSearchNumber, 0, 9);
+
+if (theResult == -1)
+
+     cout&lt;&lt; &quot;There isn&apos;tthe number!&quot;;
+
+else
+
+     cout&lt;&lt; theResult;
+
+cout&lt;&lt; endl;
+</code></pre><p>}</p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/24/Full-Permutation/">Full Permutation</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj1xp9qvn0001koupg0z0iqfz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/25/Integer-Divesion/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Integer Divesion</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
