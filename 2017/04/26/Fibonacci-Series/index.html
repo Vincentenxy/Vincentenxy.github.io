@@ -3,33 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Two Minute Search | Hexo</title>
+  <title>Fibonacci Series | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
-#include
-using namespace std;
-int twoMinuteSearch(int *list, int theSearch, int left, int right)
-{
-int middle =(left + right +1 ) / 2;   //there must be add 1">
+  <meta name="description" content="今天讲见一下Fibonacci数列的递归算法。
+首先来看一下什么是Fibonacci数列是什么！无穷数列 1,1,2,3,5,8,13,21,34,55,…被称为Fibonacci数列。其又称为黄金分割数列、因数数列、兔子数列。
+下面是其递归表达式：Fibonacci(0) = Fibonacci(1) = 1
+Fibonacci(n) = Fibonacci(n - 1) + Fibonacci">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Two Minute Search">
-<meta property="og:url" content="http://yoursite.com/2017/04/25/Two-Minute-Search/index.html">
+<meta property="og:title" content="Fibonacci Series">
+<meta property="og:url" content="http://yoursite.com/2017/04/26/Fibonacci-Series/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
-#include
-using namespace std;
-int twoMinuteSearch(int *list, int theSearch, int left, int right)
-{
-int middle =(left + right +1 ) / 2;   //there must be add 1">
-<meta property="og:updated_time" content="2017-04-25T15:21:56.557Z">
+<meta property="og:description" content="今天讲见一下Fibonacci数列的递归算法。
+首先来看一下什么是Fibonacci数列是什么！无穷数列 1,1,2,3,5,8,13,21,34,55,…被称为Fibonacci数列。其又称为黄金分割数列、因数数列、兔子数列。
+下面是其递归表达式：Fibonacci(0) = Fibonacci(1) = 1
+Fibonacci(n) = Fibonacci(n - 1) + Fibonacci">
+<meta property="og:updated_time" content="2017-04-26T16:07:15.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Two Minute Search">
-<meta name="twitter:description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
-#include
-using namespace std;
-int twoMinuteSearch(int *list, int theSearch, int left, int right)
-{
-int middle =(left + right +1 ) / 2;   //there must be add 1">
+<meta name="twitter:title" content="Fibonacci Series">
+<meta name="twitter:description" content="今天讲见一下Fibonacci数列的递归算法。
+首先来看一下什么是Fibonacci数列是什么！无穷数列 1,1,2,3,5,8,13,21,34,55,…被称为Fibonacci数列。其又称为黄金分割数列、因数数列、兔子数列。
+下面是其递归表达式：Fibonacci(0) = Fibonacci(1) = 1
+Fibonacci(n) = Fibonacci(n - 1) + Fibonacci">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -78,10 +72,10 @@ int middle =(left + right +1 ) / 2;   //there must be add 1">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Two-Minute-Search" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Fibonacci-Series" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/25/Two-Minute-Search/" class="article-date">
-  <time datetime="2017-04-25T15:17:09.000Z" itemprop="datePublished">2017-04-25</time>
+    <a href="/2017/04/26/Fibonacci-Series/" class="article-date">
+  <time datetime="2017-04-26T15:54:09.000Z" itemprop="datePublished">2017-04-26</time>
 </a>
     
   </div>
@@ -92,7 +86,7 @@ int middle =(left + right +1 ) / 2;   //there must be add 1">
         
   
     <h1 class="article-title" itemprop="name">
-      Two Minute Search
+      Fibonacci Series
     </h1>
   
 
@@ -100,68 +94,37 @@ int middle =(left + right +1 ) / 2;   //there must be add 1">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h1><p>今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！</p>
-<p>#include<iostream></iostream></p>
+        <p>今天讲见一下Fibonacci数列的递归算法。</p>
+<h3 id="首先来看一下什么是Fibonacci数列是什么！"><a href="#首先来看一下什么是Fibonacci数列是什么！" class="headerlink" title="首先来看一下什么是Fibonacci数列是什么！"></a>首先来看一下什么是Fibonacci数列是什么！</h3><p>无穷数列 1,1,2,3,5,8,13,21,34,55,…被称为Fibonacci数列。其又称为黄金分割数列、因数数列、兔子数列。</p>
+<h3 id="下面是其递归表达式："><a href="#下面是其递归表达式：" class="headerlink" title="下面是其递归表达式："></a>下面是其递归表达式：</h3><p>Fibonacci(0) = Fibonacci(1) = 1</p>
+<p>Fibonacci(n) = Fibonacci(n - 1) + Fibonacci(n - 2)  n &gt; 1</p>
+<h3 id="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："><a href="#Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：" class="headerlink" title="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："></a>Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：</h3><p>#include<iostream></iostream></p>
 <p>using namespace std;</p>
-<p>int twoMinuteSearch(int *list, int theSearch, int left, int right)</p>
+<p>int fibonacciSeries( int theNum )</p>
 <p>{</p>
-<pre><code>int middle =(left + right +1 ) / 2;   //there must be add 1, it&apos;s important,while 9 will not be found
+<pre><code>if (theNum &lt;= 1)
 
-
-
-if (theSearch &gt; list[right] || theSearch &lt; list[left])
-
-     return -1;
-
-
-
-if (theSearch == list[middle])
-
-     return middle - 1;
-
-if (theSearch &gt; list[middle])
-
-     return twoMinuteSearch(list, theSearch, middle, right);
+     return 1;
 
 else
 
-     return twoMinuteSearch(list, theSearch, left, middle);
+     return fibonacciSeries(theNum - 1) +fibonacciSeries(theNum - 2);
 </code></pre><p>}</p>
 <p>void main()</p>
 <p>{</p>
-<pre><code>int theSearchNumber;
+<pre><code>int theNumber;
 
-int theList[10] = { NULL,0,1,2,3,4,5,6,7,8};  //The first must be NULL, because therewill be a problem that the first or the last can&apos;t be found!
+cout&lt;&lt; &quot;Please inputthe number:&quot;;
 
+cin &gt;&gt; theNumber;
 
-
-int theResult;
-
-
-
-cout&lt;&lt; &quot;Please inputthe number which you want to search:&quot;;
-
-cin &gt;&gt; theSearchNumber;
-
-
-
-theResult=  twoMinuteSearch( theList,theSearchNumber, 0, 9);
-
-if (theResult == -1)
-
-     cout&lt;&lt; &quot;There isn&apos;tthe number!&quot;;
-
-else
-
-     cout&lt;&lt; theResult;
-
-cout&lt;&lt; endl;
+cout&lt;&lt; fibonacciSeries(theNumber ) &lt;&lt; endl;
 </code></pre><p>}</p>
-
+<h3 id="明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！"><a href="#明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！" class="headerlink" title="明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！"></a>明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj1z6c3vm00049kup2o9qaipw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/26/Fibonacci-Series/" data-id="cj1z6c3vg00019kupj5c5xj8h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -172,19 +135,10 @@ cout&lt;&lt; endl;
     
 <nav id="article-nav">
   
-    <a href="/2017/04/26/Fibonacci-Series/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Fibonacci Series
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/25/Integer-Divesion/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/04/25/Two-Minute-Search/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Integer Divesion</div>
+      <div class="article-nav-title">Two Minute Search</div>
     </a>
   
 </nav>

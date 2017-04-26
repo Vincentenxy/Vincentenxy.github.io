@@ -61,6 +61,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Fibonacci-Series" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/Fibonacci-Series/" class="article-date">
+  <time datetime="2017-04-26T15:54:09.000Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/26/Fibonacci-Series/">Fibonacci Series</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天讲见一下Fibonacci数列的递归算法。</p>
+<h3 id="首先来看一下什么是Fibonacci数列是什么！"><a href="#首先来看一下什么是Fibonacci数列是什么！" class="headerlink" title="首先来看一下什么是Fibonacci数列是什么！"></a>首先来看一下什么是Fibonacci数列是什么！</h3><p>无穷数列 1,1,2,3,5,8,13,21,34,55,…被称为Fibonacci数列。其又称为黄金分割数列、因数数列、兔子数列。</p>
+<h3 id="下面是其递归表达式："><a href="#下面是其递归表达式：" class="headerlink" title="下面是其递归表达式："></a>下面是其递归表达式：</h3><p>Fibonacci(0) = Fibonacci(1) = 1</p>
+<p>Fibonacci(n) = Fibonacci(n - 1) + Fibonacci(n - 2)  n &gt; 1</p>
+<h3 id="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："><a href="#Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：" class="headerlink" title="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："></a>Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：</h3><p>#include<iostream></iostream></p>
+<p>using namespace std;</p>
+<p>int fibonacciSeries( int theNum )</p>
+<p>{</p>
+<pre><code>if (theNum &lt;= 1)
+
+     return 1;
+
+else
+
+     return fibonacciSeries(theNum - 1) +fibonacciSeries(theNum - 2);
+</code></pre><p>}</p>
+<p>void main()</p>
+<p>{</p>
+<pre><code>int theNumber;
+
+cout&lt;&lt; &quot;Please inputthe number:&quot;;
+
+cin &gt;&gt; theNumber;
+
+cout&lt;&lt; fibonacciSeries(theNumber ) &lt;&lt; endl;
+</code></pre><p>}</p>
+<h3 id="明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！"><a href="#明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！" class="headerlink" title="明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！"></a>明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/26/Fibonacci-Series/" data-id="cj1z6c3vg00019kupj5c5xj8h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Two-Minute-Search" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/25/Two-Minute-Search/" class="article-date">
@@ -144,7 +208,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj1ys7gad00039kuprebnuskr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj1z6c3vm00049kup2o9qaipw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -221,7 +285,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Integer-Divesion/" data-id="cj1ys7gad00019kupo3slkfa6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/Integer-Divesion/" data-id="cj1z6c3vl00039kupinmmymq5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -320,7 +384,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/24/Full-Permutation/" data-id="cj1ys7gad00009kup6sslh3nz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/24/Full-Permutation/" data-id="cj1z6c3vb00009kupvk2os7ww" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursive-c/">recursive,c++</a></li></ul>
@@ -374,6 +438,10 @@ cout&lt;&lt; endl;
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/04/26/Fibonacci-Series/">Fibonacci Series</a>
+          </li>
         
           <li>
             <a href="/2017/04/25/Two-Minute-Search/">Two Minute Search</a>
