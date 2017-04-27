@@ -3,33 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Two Minute Search | Hexo</title>
+  <title>Fibonacci-2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
-#include
-using namespace std;
-int twoMinuteSearch(int *list, int theSearch, int left, int right)
-{
-int middle =(left + right +1 ) / 2;   //there must be add 1">
+  <meta name="description" content="今天我们来讲一下Fibonacci数列的自底向上的非递归算法。​       由于递归算法算然能够简洁方便，但是递归的时候每一次的递归都是十分的消耗计算机的性能的。Fibonacci数列用小白的电脑是计算出来是需要消耗大量的时间和内存的。所以说我们现在利用另外的一种的简单的方法使得我们的电脑能够在短时间内计算出最后的结果。那就是自上而下的计算方法。和递归的方法还是有一定的区别的！
+​      其">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Two Minute Search">
-<meta property="og:url" content="http://yoursite.com/2017/04/25/Two-Minute-Search/index.html">
+<meta property="og:title" content="Fibonacci-2">
+<meta property="og:url" content="http://yoursite.com/2017/04/28/Fibonacci-2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
-#include
-using namespace std;
-int twoMinuteSearch(int *list, int theSearch, int left, int right)
-{
-int middle =(left + right +1 ) / 2;   //there must be add 1">
-<meta property="og:updated_time" content="2017-04-25T15:21:56.557Z">
+<meta property="og:description" content="今天我们来讲一下Fibonacci数列的自底向上的非递归算法。​       由于递归算法算然能够简洁方便，但是递归的时候每一次的递归都是十分的消耗计算机的性能的。Fibonacci数列用小白的电脑是计算出来是需要消耗大量的时间和内存的。所以说我们现在利用另外的一种的简单的方法使得我们的电脑能够在短时间内计算出最后的结果。那就是自上而下的计算方法。和递归的方法还是有一定的区别的！
+​      其">
+<meta property="og:updated_time" content="2017-04-27T16:41:51.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Two Minute Search">
-<meta name="twitter:description" content="二分搜索今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！
-#include
-using namespace std;
-int twoMinuteSearch(int *list, int theSearch, int left, int right)
-{
-int middle =(left + right +1 ) / 2;   //there must be add 1">
+<meta name="twitter:title" content="Fibonacci-2">
+<meta name="twitter:description" content="今天我们来讲一下Fibonacci数列的自底向上的非递归算法。​       由于递归算法算然能够简洁方便，但是递归的时候每一次的递归都是十分的消耗计算机的性能的。Fibonacci数列用小白的电脑是计算出来是需要消耗大量的时间和内存的。所以说我们现在利用另外的一种的简单的方法使得我们的电脑能够在短时间内计算出最后的结果。那就是自上而下的计算方法。和递归的方法还是有一定的区别的！
+​      其">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -78,10 +66,10 @@ int middle =(left + right +1 ) / 2;   //there must be add 1">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Two-Minute-Search" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Fibonacci-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/25/Two-Minute-Search/" class="article-date">
-  <time datetime="2017-04-25T15:17:09.000Z" itemprop="datePublished">2017-04-25</time>
+    <a href="/2017/04/28/Fibonacci-2/" class="article-date">
+  <time datetime="2017-04-27T16:31:40.000Z" itemprop="datePublished">2017-04-28</time>
 </a>
     
   </div>
@@ -92,7 +80,7 @@ int middle =(left + right +1 ) / 2;   //there must be add 1">
         
   
     <h1 class="article-title" itemprop="name">
-      Two Minute Search
+      Fibonacci-2
     </h1>
   
 
@@ -100,71 +88,72 @@ int middle =(left + right +1 ) / 2;   //there must be add 1">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h1><p>今天讲一下利用递归进行计算二分搜索。递归已经讲过了，今天还是直接上程序吧！</p>
+        <h2 id="今天我们来讲一下Fibonacci数列的自底向上的非递归算法。"><a href="#今天我们来讲一下Fibonacci数列的自底向上的非递归算法。" class="headerlink" title="今天我们来讲一下Fibonacci数列的自底向上的非递归算法。"></a>今天我们来讲一下Fibonacci数列的自底向上的非递归算法。</h2><p>​       由于递归算法算然能够简洁方便，但是递归的时候每一次的递归都是十分的消耗计算机的性能的。Fibonacci数列用小白的电脑是计算出来是需要消耗大量的时间和内存的。所以说我们现在利用另外的一种的简单的方法使得我们的电脑能够在短时间内计算出最后的结果。那就是自上而下的计算方法。和递归的方法还是有一定的区别的！</p>
+<p>​      其思想也就在于利用前面计算出来的结果计算下一步将要计算的内容，然后再进行移位计算更下面的内容。</p>
+<h3 id="下面我们来看一下主体程序"><a href="#下面我们来看一下主体程序" class="headerlink" title="下面我们来看一下主体程序"></a>下面我们来看一下主体程序</h3><p>/*</p>
+<p>Write: Vincentenxy</p>
+<p>Time:2017.4.27</p>
+<p>Introduction: Fibonacci 数列的自底向上非递归算法</p>
+<p>*/</p>
 <p>#include<iostream></iostream></p>
 <p>using namespace std;</p>
-<p>int twoMinuteSearch(int *list, int theSearch, int left, int right)</p>
+<p>int FibonacciDownTop( int theNum )</p>
 <p>{</p>
-<pre><code>int middle =(left + right +1 ) / 2;   //there must be add 1, it&apos;s important,while 9 will not be found
+<pre><code>if (theNum &lt;= 1)
 
-
-
-if (theSearch &gt; list[right] || theSearch &lt; list[left])
-
-     return -1;
-
-
-
-if (theSearch == list[middle])
-
-     return middle - 1;
-
-if (theSearch &gt; list[middle])
-
-     return twoMinuteSearch(list, theSearch, middle, right);
+     return 1;
 
 else
 
-     return twoMinuteSearch(list, theSearch, left, middle);
+{
+
+     int theFibonacciFirst =1;
+
+     int theFibonacciSecond= 1;
+
+     int theFinobaccin = 0;
+
+
+
+     for (int i = 2; i &lt;= theNum; i ++)
+
+     {
+
+         theFinobaccin= theFibonacciFirst + theFibonacciSecond;
+
+         theFibonacciFirst= theFibonacciSecond;
+
+         theFibonacciSecond= theFinobaccin;
+
+     }
+
+     return theFinobaccin;
+
+}
 </code></pre><p>}</p>
 <p>void main()</p>
 <p>{</p>
-<pre><code>int theSearchNumber;
-
-int theList[10] = { NULL,0,1,2,3,4,5,6,7,8};  //The first must be NULL, because therewill be a problem that the first or the last can&apos;t be found!
+<pre><code>int theNumber;
 
 
 
-int theResult;
+cout&lt;&lt; &quot;Please inputthe number:&quot;;
+
+cin &gt;&gt; theNumber;
 
 
 
-cout&lt;&lt; &quot;Please inputthe number which you want to search:&quot;;
-
-cin &gt;&gt; theSearchNumber;
-
-
-
-theResult=  twoMinuteSearch( theList,theSearchNumber, 0, 9);
-
-if (theResult == -1)
-
-     cout&lt;&lt; &quot;There isn&apos;tthe number!&quot;;
-
-else
-
-     cout&lt;&lt; theResult;
-
-cout&lt;&lt; endl;
+cout&lt;&lt;&quot;Fibonacci(&quot;&lt;&lt; theNumber &lt;&lt; &quot;) = &quot; &lt;&lt;FibonacciDownTop(theNumber) &lt;&lt; endl;
 </code></pre><p>}</p>
+<p>基本上在这里了，重点的就在于else里面的循环。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj20n9ehr00083wup8qfroixm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/28/Fibonacci-2/" data-id="cj20n9ehe00013wuptgbph666" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
 
     </footer>
   </div>
@@ -172,19 +161,19 @@ cout&lt;&lt; endl;
     
 <nav id="article-nav">
   
-    <a href="/2017/04/26/Fibonacci-1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/28/Fibonacci-3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Fibonacci-1
+          Fibonacci-3
         
       </div>
     </a>
   
   
-    <a href="/2017/04/25/Integer-Divesion/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/04/26/Fibonacci-1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Integer Divesion</div>
+      <div class="article-nav-title">Fibonacci-1</div>
     </a>
   
 </nav>

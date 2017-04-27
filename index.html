@@ -61,9 +61,199 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Fibonacci-Series" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Fibonacci-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/26/Fibonacci-Series/" class="article-date">
+    <a href="/2017/04/28/Fibonacci-3/" class="article-date">
+  <time datetime="2017-04-27T16:42:21.000Z" itemprop="datePublished">2017-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/28/Fibonacci-3/">Fibonacci-3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="今天我们来讲一下Fibonacci数列自顶向下的递归算法"><a href="#今天我们来讲一下Fibonacci数列自顶向下的递归算法" class="headerlink" title="今天我们来讲一下Fibonacci数列自顶向下的递归算法"></a>今天我们来讲一下Fibonacci数列自顶向下的递归算法</h2><p>​       前面我们讲了Fibonacci的两种算法，今天我们来讲一下另外的一种递归算法。这种算法里面我们用了一个数组表示我们中间计算的结果，最后返回数组的最终值，也就是我们要求的那个Fibonacci数。同样我们也是利用递归进行计算，对于递归我想大家都有一定的了解了，我就不在过多的解释了。注意中间的数组就可以了，实现的是自顶向下的递归计算。</p>
+<h3 id="让我们来看看源代码吧"><a href="#让我们来看看源代码吧" class="headerlink" title="让我们来看看源代码吧"></a>让我们来看看源代码吧</h3><p>/*</p>
+<p> Write:Vincentenxy</p>
+<p> Time:2017.4.27</p>
+<p> Introduction: Fibonacci 的自顶向下递归算法</p>
+<p>*/</p>
+<p>#include<iostream></iostream></p>
+<p>using namespace std;</p>
+<p>int Fibonacci[] = {1,1,0};</p>
+<p>int fibonacciTopDown( int theNum)</p>
+<p>{</p>
+<pre><code>if (theNum &lt;= 2)
+
+{
+
+     if (theNum == 0 )
+
+         return Fibonacci[0];
+
+     if (theNum == 1)
+
+         return Fibonacci[1];
+
+     if (theNum == 2)
+
+         return Fibonacci[2] =Fibonacci[0] + Fibonacci[1] ;
+
+}
+
+else
+
+{
+
+     fibonacciTopDown(theNum - 1);
+
+     Fibonacci[theNum] = Fibonacci[theNum - 1] + Fibonacci[theNum - 2];
+
+}
+
+return Fibonacci[theNum];
+</code></pre><p>}</p>
+<p>void main()</p>
+<p>{</p>
+<pre><code>int theNumber;
+
+
+
+cout&lt;&lt; &quot;Please inputthe nunber :&quot;;
+
+cin &gt;&gt; theNumber;
+
+
+
+cout&lt;&lt;&quot;Fibonacci(&quot;&lt;&lt; theNumber &lt;&lt; &quot;) = &quot; &lt;&lt; fibonacciTopDown(theNumber ) &lt;&lt; endl ;
+</code></pre><p>}</p>
+<p>OK！关于Fibonacci的讲解我们就到这里吧，明天给大家奉上其他算法！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/28/Fibonacci-3/" data-id="cj20n9ehi00033wupemf5exh5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Fibonacci-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/28/Fibonacci-2/" class="article-date">
+  <time datetime="2017-04-27T16:31:40.000Z" itemprop="datePublished">2017-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/28/Fibonacci-2/">Fibonacci-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="今天我们来讲一下Fibonacci数列的自底向上的非递归算法。"><a href="#今天我们来讲一下Fibonacci数列的自底向上的非递归算法。" class="headerlink" title="今天我们来讲一下Fibonacci数列的自底向上的非递归算法。"></a>今天我们来讲一下Fibonacci数列的自底向上的非递归算法。</h2><p>​       由于递归算法算然能够简洁方便，但是递归的时候每一次的递归都是十分的消耗计算机的性能的。Fibonacci数列用小白的电脑是计算出来是需要消耗大量的时间和内存的。所以说我们现在利用另外的一种的简单的方法使得我们的电脑能够在短时间内计算出最后的结果。那就是自上而下的计算方法。和递归的方法还是有一定的区别的！</p>
+<p>​      其思想也就在于利用前面计算出来的结果计算下一步将要计算的内容，然后再进行移位计算更下面的内容。</p>
+<h3 id="下面我们来看一下主体程序"><a href="#下面我们来看一下主体程序" class="headerlink" title="下面我们来看一下主体程序"></a>下面我们来看一下主体程序</h3><p>/*</p>
+<p>Write: Vincentenxy</p>
+<p>Time:2017.4.27</p>
+<p>Introduction: Fibonacci 数列的自底向上非递归算法</p>
+<p>*/</p>
+<p>#include<iostream></iostream></p>
+<p>using namespace std;</p>
+<p>int FibonacciDownTop( int theNum )</p>
+<p>{</p>
+<pre><code>if (theNum &lt;= 1)
+
+     return 1;
+
+else
+
+{
+
+     int theFibonacciFirst =1;
+
+     int theFibonacciSecond= 1;
+
+     int theFinobaccin = 0;
+
+
+
+     for (int i = 2; i &lt;= theNum; i ++)
+
+     {
+
+         theFinobaccin= theFibonacciFirst + theFibonacciSecond;
+
+         theFibonacciFirst= theFibonacciSecond;
+
+         theFibonacciSecond= theFinobaccin;
+
+     }
+
+     return theFinobaccin;
+
+}
+</code></pre><p>}</p>
+<p>void main()</p>
+<p>{</p>
+<pre><code>int theNumber;
+
+
+
+cout&lt;&lt; &quot;Please inputthe number:&quot;;
+
+cin &gt;&gt; theNumber;
+
+
+
+cout&lt;&lt;&quot;Fibonacci(&quot;&lt;&lt; theNumber &lt;&lt; &quot;) = &quot; &lt;&lt;FibonacciDownTop(theNumber) &lt;&lt; endl;
+</code></pre><p>}</p>
+<p>基本上在这里了，重点的就在于else里面的循环。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/28/Fibonacci-2/" data-id="cj20n9ehe00013wuptgbph666" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Fibonacci-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/Fibonacci-1/" class="article-date">
   <time datetime="2017-04-26T15:54:09.000Z" itemprop="datePublished">2017-04-26</time>
 </a>
     
@@ -75,7 +265,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/26/Fibonacci-Series/">Fibonacci Series</a>
+      <a class="article-title" href="/2017/04/26/Fibonacci-1/">Fibonacci-1</a>
     </h1>
   
 
@@ -83,13 +273,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天讲见一下Fibonacci数列的递归算法。</p>
+        <p>今天讲一下Fibonacci数列的递归算法。</p>
 <h3 id="首先来看一下什么是Fibonacci数列是什么！"><a href="#首先来看一下什么是Fibonacci数列是什么！" class="headerlink" title="首先来看一下什么是Fibonacci数列是什么！"></a>首先来看一下什么是Fibonacci数列是什么！</h3><p>无穷数列 1,1,2,3,5,8,13,21,34,55,…被称为Fibonacci数列。其又称为黄金分割数列、因数数列、兔子数列。</p>
 <h3 id="下面是其递归表达式："><a href="#下面是其递归表达式：" class="headerlink" title="下面是其递归表达式："></a>下面是其递归表达式：</h3><p>Fibonacci(0) = Fibonacci(1) = 1</p>
 <p>Fibonacci(n) = Fibonacci(n - 1) + Fibonacci(n - 2)  n &gt; 1</p>
-<h3 id="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："><a href="#Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：" class="headerlink" title="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："></a>Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：</h3><p>#include<iostream></iostream></p>
+<h3 id="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："><a href="#Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：" class="headerlink" title="Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）："></a>Fibonacci数列有多种程序，今天就先讲最普通也是最简单的普通递归算法（程序如下）：</h3><p>/*</p>
+<p>Write: Vincentenxy</p>
+<p>Time:2017.4.27</p>
+<p>Introduction: Fibonacci 数列的递归算法</p>
+<p>*/</p>
+<p>#include<iostream></iostream></p>
 <p>using namespace std;</p>
-<p>int fibonacciSeries( int theNum )</p>
+<p>int fibonacciSeries(int theNum)</p>
 <p>{</p>
 <pre><code>if (theNum &lt;= 1)
 
@@ -107,13 +302,15 @@ cout&lt;&lt; &quot;Please inputthe number:&quot;;
 
 cin &gt;&gt; theNumber;
 
-cout&lt;&lt; fibonacciSeries(theNumber ) &lt;&lt; endl;
+
+
+cout&lt;&lt; &quot;Fibonacci(&quot; &lt;&lt; theNumber &lt;&lt; &quot;) = &quot; &lt;&lt;fibonacciSeries(theNumber) &lt;&lt; endl;
 </code></pre><p>}</p>
 <h3 id="明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！"><a href="#明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！" class="headerlink" title="明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！"></a>明天将更新自下而上的非递归算法和自上而下的递归算法，敬请关注！</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/26/Fibonacci-Series/" data-id="cj1z6c3vg00019kupj5c5xj8h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/26/Fibonacci-1/" data-id="cj20n9eha00003wupsq4pxoyy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -208,7 +405,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj1z6c3vm00049kup2o9qaipw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj20n9ehr00083wup8qfroixm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -285,7 +482,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Integer-Divesion/" data-id="cj1z6c3vl00039kupinmmymq5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/Integer-Divesion/" data-id="cj20n9ehk00043wupsy1ib0vh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -384,7 +581,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/24/Full-Permutation/" data-id="cj1z6c3vb00009kupvk2os7ww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/24/Full-Permutation/" data-id="cj20n9ehm00053wupu5ju5kqp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursive-c/">recursive,c++</a></li></ul>
@@ -408,7 +605,7 @@ cout&lt;&lt; endl;
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursive-c/">recursive,c++</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursive-c/">recursive,c++</a></li></ul>
     </div>
   </div>
 
@@ -418,7 +615,7 @@ cout&lt;&lt; endl;
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/recursion-c/" style="font-size: 20px;">recursion,c++</a> <a href="/tags/recursive-c/" style="font-size: 10px;">recursive,c++</a>
+      <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/recursion-c/" style="font-size: 20px;">recursion,c++</a> <a href="/tags/recursive-c/" style="font-size: 10px;">recursive,c++</a>
     </div>
   </div>
 
@@ -440,7 +637,15 @@ cout&lt;&lt; endl;
       <ul>
         
           <li>
-            <a href="/2017/04/26/Fibonacci-Series/">Fibonacci Series</a>
+            <a href="/2017/04/28/Fibonacci-3/">Fibonacci-3</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/28/Fibonacci-2/">Fibonacci-2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/Fibonacci-1/">Fibonacci-1</a>
           </li>
         
           <li>
@@ -449,10 +654,6 @@ cout&lt;&lt; endl;
         
           <li>
             <a href="/2017/04/25/Integer-Divesion/">Integer Divesion</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/24/Full-Permutation/">Full Permutation</a>
           </li>
         
       </ul>
