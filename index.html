@@ -88,98 +88,145 @@
 <p>（1）分解：首先将数组以一个元素为基准划分为三段，小于基准元素的为一段，基准元素为一段，大于基准元素的为一段。</p>
 <p>（2）递归求解：通过递归的方法分别为上面的三段数列进行排序。</p>
 <p>（3）：合并：有序排序是就地进行的，所以在大于、小于基准元素的排好序之后就不用再执行任何计算了，已经排好序了。</p>
-<h3 id="下面看一下算法实现代码："><a href="#下面看一下算法实现代码：" class="headerlink" title="下面看一下算法实现代码："></a>下面看一下算法实现代码：</h3><h3 id="头文件："><a href="#头文件：" class="headerlink" title="头文件："></a>头文件：</h3><p>#include<iostream></iostream></p>
-<p>using namespace std;</p>
-<p>void Merge(int <em>a, int left, int mid, int right, int </em>temp)</p>
+<h3 id="下面看一下算法实现代码："><a href="#下面看一下算法实现代码：" class="headerlink" title="下面看一下算法实现代码："></a>下面看一下算法实现代码：</h3><h3 id="头文件："><a href="#头文件：" class="headerlink" title="头文件："></a>头文件：</h3><p>template &lt; class Type &gt;</p>
+<p>int Partition(Type a[], int p, int r)</p>
 <p>{</p>
-<pre><code>int i = left;
+<pre><code>int i = p, j = r + 1 ;
 
-int j = mid + 1;
+int temp;
 
-int k = 0;
+Type x = a[p];
 
-
-
-while (i &lt;= mid &amp;&amp; j &lt;= right)
+while (i &lt; j)
 
 {
 
-     if (a[i] &lt;= a[j])
+     while (a[++i] &lt; x&amp;&amp; i &lt; r);
 
-         temp[k++] = a[i++];
+     while (a[--j] &gt; x);
+
+     if (i &lt; j)
+
+     {
+
+         temp= a[i];
+
+         a[i] = a[j];
+
+         a[j] = temp;
+
+     }
+
+}
+
+a[p] = a[j];
+
+a[j] = x;
+
+return j;
+</code></pre><p>}</p>
+<p>template <class type=""></class></p>
+<p>void QuickSort(Type a[], int p, int r)</p>
+<p>{</p>
+<pre><code>if (p &lt; r)
+
+{
+
+     int q = Partition(a, p, r);
+
+     QuickSort(a, p, q - 1);
+
+     QuickSort(a, q + 1, r);
+
+}
+</code></pre><p>}</p>
+<h3 id="main-cpp文件"><a href="#main-cpp文件" class="headerlink" title="main.cpp文件"></a>main.cpp文件</h3><p>template &lt; class Type&gt;</p>
+<p>void MergeSort( Type a[], int n)</p>
+<p>{</p>
+<pre><code>Type *b = new Type[n];
+
+int s = 1;
+
+while (s &lt; n)
+
+{
+
+     MergePass(a, b, s, n);
+
+     s+= s;
+
+     MergePass(b,a, s, n);
+
+     s+= s;
+
+}
+</code></pre><p>}</p>
+<p>template &lt; class Type&gt;</p>
+<p>void MergePass( Type x[], Type y[], int s, int n)</p>
+<p>{</p>
+<pre><code>int i = 0;
+
+
+
+while ( i &lt;= n - 2 * s )
+
+{
+
+     Merge(x, y, i, i + s - 1, i + 2 * s - 1);
+
+     i= i + 2 * s;
+
+}
+
+if (i + s &lt; n)
+
+     Merge(x, y, i, i + s - 1, n - 1);
+
+else
+
+     for (int j = i; j &lt;= n - 1; j++)
+
+         y[j] = x[j];
+</code></pre><p>}</p>
+<p>template <class type=""></class></p>
+<p>void Merge(Type c[], Type d[], int a, int m, int r)</p>
+<p>{</p>
+<pre><code>int i = a, j = m + 1, k = a;
+
+
+
+while ((i &lt;= m) &amp;&amp; (j&lt;= r))
+
+{
+
+     if (c[i] &lt;= c[j])
+
+         d[k++] = c[i++];
 
      else
 
-         temp[k++] = a[j++];
+         d[k++] = c[j++];
 
 }
 
-while (i &lt;= mid)
+if (i &gt; m)
 
-{
+     for (int q = j; q &lt;= r; q++)
 
-     temp[k++] = a[ i++ ];
+         d[k++] = c[q];
 
-}
+else
 
-while (j &lt;= right)
+     for(int q = i; q &lt;= m; q ++)
 
-{
-
-     temp[k++] = a[j++];
-
-}
-
-for (i = 0; i &lt; k;i++)
-
-     a[left + i] = temp[i];
+         d[k++] = c[q];
 </code></pre><p>}</p>
-<p>void MergeSort(int <em>a, int left, int right, int </em> temp)</p>
-<p>{</p>
-<pre><code>if (left &lt; right)
-
-{
-
-     int mid = (left + right) / 2;
-
-     MergeSort(a, left, mid, temp);      
-
-     MergeSort(a, mid + 1, right, temp);   
-
-     Merge(a, left, mid, right, temp);
-
-}
-</code></pre><p>}</p>
-<h3 id="main-cpp文件"><a href="#main-cpp文件" class="headerlink" title="main.cpp文件"></a>main.cpp文件</h3><p>#include<iostream></iostream></p>
-<p>#include<iomanip></iomanip></p>
-<p>#include”themerge.h”</p>
-<p>using namespace std;</p>
-<p>void main()</p>
-<p>{</p>
-<pre><code>int theList[] ={1,8,4,6,0,7,9,2,3,5};
-
-int theNum = sizeof(theList) / sizeof(theList[0]);
-
-int *p = new int[theNum];
-</code></pre><p>   MergeSort(theList, 0, theNum-1, p);</p>
-<pre><code>for (int i = 0; i &lt; 10;i++)
-
-     cout&lt;&lt; setw(5) &lt;&lt; theList[i];
-
-
-
-
-
-cout&lt;&lt; endl;
-
-delete []p;
-</code></pre><p>}</p>
 <p>明天接着更新另外的算法！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/28/Quicksort/" data-id="cj22241fb0001bkupl0bnnxc3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/28/Quicksort/" data-id="cj23i5ukd0005woup0s79xeyy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/quicksort，c/">quicksort，c++</a></li></ul>
@@ -273,7 +320,7 @@ cout&lt;&lt;&quot;Fibonacci(&quot;&lt;&lt; theNumber &lt;&lt; &quot;) = &quot; &
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/28/Fibonacci-3/" data-id="cj22241fb0005bkupdl1cd1ca" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/28/Fibonacci-3/" data-id="cj23i5uk90003woupbxywl3l4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -369,7 +416,7 @@ cout&lt;&lt;&quot;Fibonacci(&quot;&lt;&lt; theNumber &lt;&lt; &quot;) = &quot; &
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/28/Fibonacci-2/" data-id="cj22241fx000ibkup0c64oueh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/28/Fibonacci-2/" data-id="cj23i5ujz0000woup93io0nqb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
@@ -440,7 +487,7 @@ cout&lt;&lt; &quot;Fibonacci(&quot; &lt;&lt; theNumber &lt;&lt; &quot;) = &quot;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/26/Fibonacci-1/" data-id="cj22241fr0008bkupol9xpsrq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/26/Fibonacci-1/" data-id="cj23i5ukk0009woupf2d16bi6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -535,7 +582,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj22241fb0003bkupvr48c8b5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/Two-Minute-Search/" data-id="cj23i5ukj0008woupxnpy4ft1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -612,7 +659,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/Integer-Divesion/" data-id="cj22241fb0004bkupqlcasb68" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/Integer-Divesion/" data-id="cj23i5uk30001woupuvmonimf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion-c/">recursion,c++</a></li></ul>
@@ -711,7 +758,7 @@ cout&lt;&lt; endl;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/24/Full-Permutation/" data-id="cj22241ev0000bkupyevazlh8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/24/Full-Permutation/" data-id="cj23i5ukb0004woupozgmpkog" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursive-c/">recursive,c++</a></li></ul>
